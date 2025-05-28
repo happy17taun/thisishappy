@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For U Titisdameiyanti</title>
+
+<!-- Google Font Montserrat untuk font estetik -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  /* Reset dan base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #fff;
+    color: #000;
+    overflow-x: hidden;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* Running text di tepi (kiri dan kanan) */
+  #runningTextLeft, #runningTextRight {
+    position: fixed;
+    top: 0; bottom: 0;
+    width: 30px;
+    color: #f5f0e6; /* cream */
+    font-weight: 700;
+    font-size: 18px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    overflow: hidden;
+    user-select: none;
+    z-index: 9999;
+  }
+  #runningTextLeft {
+    left: 0;
+    animation: scrollUp 30s linear infinite;
+  }
+  #runningTextRight {
+    right: 0;
+    animation: scrollDown 30s linear infinite;
+  }
+  @keyframes scrollUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+  }
+  @keyframes scrollDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+
+  /* Konten utama */
+  #mainContent {
+    flex: 1;
+    padding: 60px 40px 40px;
+    position: relative;
+    max-width: 720px;
+    margin: auto;
+    text-align: center;
+  }
+
+  /* Judul besar */
+  h1.title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    letter-spacing: 4px;
+  }
+
+  /* Container tombol */
+  #buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* Button hitam dengan font putih estetik */
+  button.main-btn {
+    background: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    transition: background-color 0.3s ease;
+  }
+  button.main-btn:hover {
+    background-color: #222;
+  }
+
+  /* Area konten yang muncul setelah klik button */
+  #pageContent {
+    margin-top: 50px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-align: justify;
+    min-height: 280px;
+  }
+
+  /* Love pink transparan banyak dan halus */
+  .love-pink {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+    opacity: 0.12;
+    animation: flyUpPink linear infinite;
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+  }
+  @keyframes flyUpPink {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+      opacity: 0.12;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(25px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Love kecil dari button, tidak transparan, banyak dan kecil */
+  .love-button {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+    opacity: 1;
+    pointer-events: none;
+    animation: spreadOut 1s forwards;
+  }
+  @keyframes spreadOut {
+    0% {
+      transform: translate(0,0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--x), var(--y)) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  /* Animated bear */
+  #bear {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    user-select: none;
+    animation: bearMove 6s ease-in-out infinite;
+    z-index: 1000;
+  }
+  @keyframes bearMove {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  /* Hide all page content initially */
+  .page-section {
+    display: none;
+  }
+  .page-section.active {
+    display: block;
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- Running text vertikal kiri dan kanan -->
+  <div id="runningTextLeft">thankyoutitisdameiyantithankyoutitisdameiyanti</div>
+  <div id="runningTextRight">thankyoutitisdameiyantithankyoutitisdameiyanti</div>
+
+  <div id="mainContent">
+    <h1 class="title">for u titisdameiyanti</h1>
+
+    <div id="buttons">
+      <button class="main-btn" data-page="terimakasih">terimakasih</button>
+      <button class="main-btn" data-page="aboutitisda">aboutitisda</button>
+      <button class="main-btn" data-page="we">we</button>
+      <button class="main-btn" data-page="wish">wish</button>
+    </div>
+
+    <div id="pageContent">
+      <section id="terimakasih" class="page-section">
+        <p>Terima kasih, Titis, atas segala kebaikan dan kehadiranmu yang selalu membuat hidup ini lebih berarti. Persahabatan kita adalah anugerah yang tak ternilai, dan aku sangat bersyukur memilikinya.</p>
+        <p>Setiap tawa dan cerita yang kita bagi selalu meninggalkan kenangan indah yang tak terlupakan. Kamu adalah teman yang selalu ada di saat suka maupun duka, memberikan semangat tanpa henti.</p>
+        <p>Dalam setiap langkah perjalanan hidup, dukunganmu menjadi cahaya yang membimbingku melewati masa-masa sulit. Terima kasih sudah menjadi sahabat sejati yang tulus dan setia.</p>
+        <p>Walau jarak kadang memisahkan, hati kita tetap dekat dan saling menguatkan. Persahabatan ini adalah ikatan yang kuat dan abadi, yang selalu aku jaga dengan sepenuh hati.</p>
+        <p>Semoga persahabatan kita terus tumbuh dan berkembang, membawa kebahagiaan dan kebaikan bagi kita berdua. Makasih banget, Titis, untuk semuanya.</p>
+      </section>
+
+      <section id="aboutitisda" class="page-section">
+        <p>Titis adalah sosok yang penuh kebaikan dan perhatian. Dia selalu siap membantu tanpa pamrih dan menjadi pendengar yang baik bagi siapa saja yang membutuhkan.</p>
+        <p>Kepribadiannya yang hangat dan ramah membuat semua orang merasa nyaman dan diterima. Titis juga memiliki semangat yang tinggi dalam menghadapi setiap tantangan hidup.</p>
+        <p>Kebaikannya tercermin dalam tindakan kecil sehari-hari yang sering kali membuat orang lain tersenyum dan merasa dihargai.</p>
+        <p>Dia adalah contoh nyata dari sahabat sejati yang selalu mengutamakan kebahagiaan orang lain di atas dirinya sendiri.</p>
+        <p>Kebaikan hati Titis adalah inspirasi bagi banyak orang, termasuk aku, yang beruntung mengenalnya.</p>
+      </section>
+
+      <section id="we" class="page-section">
+        <p>Kebersamaan kita telah melewati berbagai suka dan duka, membentuk ikatan yang semakin kuat dari waktu ke waktu.</p>
+        <p>Kita saling mendukung dan menguatkan dalam setiap langkah, menjadikan persahabatan ini sebagai tempat berlindung yang aman.</p>
+        <p>Setiap momen bersama penuh dengan tawa, cerita, dan kenangan yang tak tergantikan.</p>
+        <p>Kita belajar banyak dari satu sama lain dan tumbuh bersama sebagai pribadi yang lebih baik.</p>
+        <p>Persahabatan kita adalah hadiah terindah yang selalu aku syukuri dan jaga selamanya.</p>
+      </section>
+
+      <section id="wish" class="page-section">
+        <p>Harapanku untuk Titis adalah agar selalu diberi kesehatan dan kebahagiaan dalam setiap langkah hidupnya.</p>
+        <p>Semoga segala impian dan cita-citanya dapat tercapai dengan mudah dan penuh berkah.</p>
+        <p>Semoga persahabatan kita terus langgeng dan membawa kebaikan bagi kita berdua dan orang-orang di sekitar kita.</p>
+        <p>Aku berharap Titis selalu dikelilingi oleh cinta dan dukungan dari orang-orang yang menyayanginya.</p>
+        <p>Dan semoga masa depan Titis penuh dengan kesuksesan, kedamaian, dan kebahagiaan yang tak terhingga.</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Animated bear -->
+  <img id="bear" src="https://i.postimg.cc/8c8b7dZb/cute-bear.gif" alt="Cute Bear Animation" />
+
+  <script>
+    // Handle page switching dan love kecil dari button
+    const buttons = document.querySelectorAll('button.main-btn');
+    const sections = document.querySelectorAll('.page-section');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', e => {
+        const page = btn.getAttribute('data-page');
+
+        // Show clicked page content
+        sections.forEach(sec => {
+          sec.classList.toggle('active', sec.id === page);
+        });
+
+        // Buat love kecil dari button saat diklik
+        createLoveFromButton(btn);
+      });
+    });
+
+    // Buat love kecil dari button, banyak dan kecil, tidak transparan
+    function createLoveFromButton(button) {
+      const rect = button.getBoundingClientRect();
+      const loveCount = 15;
+      for(let i=0; i<loveCount; i++) {
+        const love = document.createElement('div');
+        love.classList.add('love-button');
+        // Posisi relatif ke tengah button
+        love.style.left = (rect.left + rect.width/2) + 'px';
+        love.style.top = (rect.top + rect.height/2) + 'px';
+
+        // Arah dan jarak acak
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = 40 + Math.random() * 60;
+        const x = Math.cos(angle) * distance + 'px';
+        const y = Math.sin(angle) * distance + 'px';
+        love.style.setProperty('--x', x);
+        love.style.setProperty('--y', y);
+
+        document.body.appendChild(love);
+
+        // Hapus setelah animasi selesai
+        love.addEventListener('animationend', () => love.remove());
+      }
+    }
+
+    // Love pink transparan banyak dan halus
+    function createFlyingLove() {
+      const love = document.createElement('div');
+      love.classList.add('love-pink');
+      love.style.left = Math.random() * window.innerWidth + 'px';
+      love.style.top = window.innerHeight + 30 + 'px';
+      love.style.animationDuration = (5000 + Math.random() * 5000) + 'ms';
+      document.body.appendChild(love);
+      love.addEventListener('animationend', () => love.remove());
+    }
+    setInterval(createFlyingLove, 200);
+
+  </script>
+
+</body>
+</html>
